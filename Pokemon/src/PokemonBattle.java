@@ -27,6 +27,7 @@ public class PokemonBattle {
 		 }
 		 else {
 			 System.out.println("Please enter the correct number.");
+			 
 		 }
 	}
 
