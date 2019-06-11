@@ -5,8 +5,8 @@ public class PokemonBattle {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Pokemon firstPokemon = new Pokemon(" Typhlosion ", 1600, " Fire " , " Healthy " , "Scratch" , "Bite" , "Fire Blast");
-		 Pokemon secondPokemon = new Pokemon(" Snorlax ", 1300, " Normal " , " Healthy " , "Body Slam" , "Sleep" , "Swallow");
+		Pokemon firstPokemon = new Pokemon(" Typhlosion ", 1600, " Fire " , " Healthy " , "Scratch" , "Bite" , "Fire Blast", 300 , 375 , 450);
+		 Pokemon secondPokemon = new Pokemon(" Snorlax ", 1300, " Normal " , " Healthy " , "Body Slam" , "Sleep" , "Swallow", 500 , 100 , 200);
 		 System.out.println (firstPokemon.name + firstPokemon.health + firstPokemon.type + firstPokemon.status );
 		 System.out.println (secondPokemon.name + secondPokemon.health + secondPokemon.type + secondPokemon.status );
 		 Scanner myObj = new Scanner(System.in);
