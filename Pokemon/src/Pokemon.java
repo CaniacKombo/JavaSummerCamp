@@ -11,7 +11,9 @@ public class Pokemon {
 	int pAttack1Damage;
 	int pAttack2Damage;
 	int pAttack3Damage;
-	
+
+
+	//constructor
 	public Pokemon() {
 		name = "";
 		health = 0;
@@ -25,7 +27,7 @@ public class Pokemon {
 		pAttack3Damage = 0;
 		
 	}
-	
+	//overload
 	Pokemon (String name, int health, String type, String status, String pAttack1 , String pAttack2 , String pAttack3, int pAttack1Damage, int pAttack2Damage, int pAttack3Damage ){
 		this.name = name;
 		this.health = health;
