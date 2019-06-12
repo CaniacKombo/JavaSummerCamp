@@ -132,10 +132,23 @@ public class APCSString {
     public static String removeComments(String str) {
    	 String out = "";
    	 //TODO: Complete function code
-   	 
-   	 return out;
+   	 if (str.contains("/*" ) && str.contains("*/")) {
+   		 int firstHalfInt  = str.indexOf("/*");
+   		 int secondHalfInt = str.indexOf("*/");
+   		 System.out.println("firstHalf: " + firstHalfInt);
+   		 System.out.println("secondHalf: " + secondHalfInt);
+   		 String firstHalf = str.substring(0 , firstHalfInt );
+   		 System.out.println(firstHalf);
+   		 String secondHalf = str.substring(secondHalfInt + 2);
+   		 System.out.println(secondHalf);
+   		 out = firstHalf + secondHalf;
+   		return out;
     }
-    
+    else {
+    	out = str;
+    	return out;
+    }
+    }
     // 9.
     public static String removeTag(String html) {
    	 String out = "";
@@ -189,6 +202,10 @@ public class APCSString {
    	 System.out.println("Testing 7");
    	 String rando = "applesauce";
    	 System.out.println(scroll(rando));
+   	 //8
+ 	 System.out.println("Testing 8");
+   	 String comment = "Apple/*woah that snail is fast*/Apple";
+   	 System.out.println(removeComments(comment));
     }
     
     
