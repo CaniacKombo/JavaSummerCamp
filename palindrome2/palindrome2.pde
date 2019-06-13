@@ -1,4 +1,4 @@
-String word = "e";
+String word = "racecar";
 boolean pd = true;
 int firstHalfInt = 0;
 int secondHalfInt = word.length()-1;

@@ -153,14 +153,49 @@ public class APCSString {
     public static String removeTag(String html) {
    	 String out = "";
    	 //TODO: Complete function code
+   	 if (html.contains(">" ) && html.contains("<")) {
+   		 int firstTagInt1 = html.indexOf('<');
+   		int firstTagInt2 = html.indexOf('>');
+   		String firstTag = '/' + html.substring(firstTagInt1 + 1 , firstTagInt2 + 1);
+   		int secondTagInt1 = html.lastIndexOf('<');
+   		int secondTagInt2 = html.lastIndexOf('>');
+   		String secondTag = html.substring(secondTagInt1+ 1  , secondTagInt2 +1);
+//   		System.out.println(firstTag);
+//   		System.out.println(secondTag);
+   		if (secondTag.equals(firstTag)) {
+   			String wordNoTag = html.substring(firstTagInt2 + 1, secondTagInt1);
+//   			System.out.println(wordNoTag);
+   			return wordNoTag;
+   		}
+   		else {
+   			return html;
+   		}
+   	
+   	 }
+   	 else {
+   		 return html;
+   	 }
    	 
-   	 return out;
     }
     
     // 10.
-    public boolean isValidISBN(String isbn) {
+    public static boolean isValidISBN(String isbn) {
    	 boolean valid = true;
    	 //TODO: Complete function code
+   	 int total = 0;
+   	 int a[] = new int[10];
+   	 for(int i = 0 ; i < 10 ; i++) {
+   		 if (i == 9 && isbn.charAt(i)== 'X') {
+   			 a[i]=10;
+   			 
+   		 }
+   		 else {
+   			 a[i]= Integer.parseInt(isbn.substring(i, i+1));
+   			 
+   		 }
+   		 total = total+ (a[i] * (10- i));
+   	 }
+   	valid = total % 11 == 0;
    	 
    	 return valid;
     }
@@ -206,6 +241,14 @@ public class APCSString {
  	 System.out.println("Testing 8");
    	 String comment = "Apple/*woah that snail is fast*/Apple";
    	 System.out.println(removeComments(comment));
+   	 //9.
+	 System.out.println("Testing 9");
+   	 String tag = "<a> apple </a>";
+   	 System.out.println(removeTag(tag));
+   	 //10
+	 System.out.println("Testing 10");
+   	 String library = "1111111111";
+   	 System.out.println(isValidISBN(library));
     }
     
     
