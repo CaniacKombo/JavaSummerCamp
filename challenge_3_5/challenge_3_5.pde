@@ -13,7 +13,7 @@ for(int i = 0 ; i < a.length ; i++ ){
   gradesAdded = gradesAdded + a[i];
   
 }  
-double gradeAvg = gradesAdded / a.length +1;
+double gradeAvg = gradesAdded / a.length ;
 println ("grade average. " + gradeAvg);
   
    
