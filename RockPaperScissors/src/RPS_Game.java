@@ -18,41 +18,50 @@ public static String game () {
 		System.out.println("You Chose Rock!");
 		if(rando == 1 ) {
 			tie++;
-		return ("CPU Chose Rock. \n You Tied.");
+			System.out.println("CPU Chose Rock.");
+			return ("You Tied.");
 		}
 		else if(rando == 2) {
 			loss++;
-			return ("CPU Chose Paper. \n You Lost.");
+			System.out.println("CPU Chose Paper.");
+			return ("You Lost.");
 		}
 		else win++; 
-			return ("CPU Chose Scissors. \n You Won");
+		System.out.println("CPU Chose Scissors.");
+			return ("You Won");
 	 }
 	 else if (input.equals( "2" )) {
 		System.out.println("You Chose Paper!");
 		if(rando == 1 ) {
 			win++;
-		return ("CPU Chose Rock. \n You Won.");
+			System.out.println("CPU Chose Rock.");
+		return ("You Won.");
 		}
 		else if(rando == 2) {
 			tie++;
-			return ("CPU Chose Paper. \n You Tied.");
+			System.out.println("CPU Chose Paper.");
+			return ("You Tied.");
 		}
 		else loss++;
-		return ("CPU Chose Scissors. \n You Lost");
+		System.out.println("CPU Chose Scissors.");
+		return ("You Lost");
 	 
 	 }
 	 else   {
 			System.out.println("You Chose Scissors!");
 			if(rando == 1 ) {
 				loss++;
-			return ("CPU Chose Rock. \n You Lost.");
+				System.out.println("CPU Chose Rock.");
+			return ("You Lost.");
 			}
 			else if(rando == 2) {
 				win++;
-				return ("CPU Chose Paper. \n You Won.");
+				System.out.println("CPU Chose Paper.");
+				return ("You Won.");
 			}
 			else tie++;
-			return ("CPU Chose Scissors. \n You Tied");
+			System.out.println("CPU Chose Scissors.");
+			return ("You Tied");
 		 
 		 }
 	
@@ -60,8 +69,8 @@ public static String game () {
 }
 
 public static String[] bestOfThree() {
-	String[] wins = new String[5];
-	for(int i=0; i<5; i++) {
+	String[] wins = new String[25];
+	for(int i=0; i<25; i++) {
 		
 	String games= game();
 	System.out.println(games);
@@ -75,7 +84,10 @@ public static String[] bestOfThree() {
 		//System.out.println(game());
 		
 		String[] plays = bestOfThree();
-		System.out.println(" \n"+ plays[0]+ " \n" + plays[1] + " \n" + plays[2]);
+		System.out.println( "Game Results.");
+		for(int i = 0 + 1; i < plays.length +1 ; i++ ) {
+		System.out.println( "["+ i +"] " + plays[i -1]);
+		}
 		System.out.println("Wins: "+win);
 		System.out.println("Losses: "+loss);
 		System.out.println("Ties: "+tie);
